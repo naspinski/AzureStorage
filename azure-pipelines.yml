@@ -1,3 +1,5 @@
+name: $(Build.DefinitionName).1.0.$(date:yyyyMMdd).$(date:HHmmss)
+
 trigger:
 - master
 
@@ -27,7 +29,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    versioningScheme: 'off'
+    versioningScheme: 'byBuildNumber'
     
 - task: NuGetCommand@2
   inputs:
